@@ -45,6 +45,7 @@ public class WristButton : XRBaseInteractable
     {
         hoverInteractor = interactor;
         previousHandHeight = GetLocalYPosition(hoverInteractor.transform.position);
+        Debug.Log("touch detected");
     }
 
     private void EndPressButton(XRBaseInteractor interactor)
