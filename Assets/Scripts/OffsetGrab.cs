@@ -36,9 +36,18 @@ public class OffsetGrab : XRGrabInteractable
     }
     protected override void OnSelectExit(XRBaseInteractor interactor)
     {
-        base.OnSelectExit(interactor);
-        ResetAttachmentPoint(interactor);
-        ClearInteractor(interactor);
+        if (interactor.name.Contains("Hand"))
+        {
+            base.OnSelectExit(interactor);
+            ResetAttachmentPoint(interactor);
+            ClearInteractor(interactor);
+        }
+
+        else
+        {
+            base.OnSelectEnter(interactor);
+        }
+        
     }
     private void ResetAttachmentPoint(XRBaseInteractor interactor)
     {
