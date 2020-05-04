@@ -428,7 +428,7 @@ Transform:
   m_Children:
   - {fileID: 704969436}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &228540574
 GameObject:
@@ -616,7 +616,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &239300887
 GameObject:
@@ -709,6 +709,7 @@ GameObject:
   - component: {fileID: 292200000}
   - component: {fileID: 292199998}
   - component: {fileID: 292199997}
+  - component: {fileID: 292199999}
   m_Layer: 11
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -797,6 +798,22 @@ MonoBehaviour:
   m_PlayHapticsOnHoverExit: 0
   m_HapticHoverExitIntensity: 0
   m_HapticHoverExitDuration: 0
+--- !u!114 &292199999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292199995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da851c34f57b1c441b72767710d28c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allButtonHandlers:
+  - {fileID: 11400000, guid: c06834ad45964654691056bb5b93f8c6, type: 2}
+  allAxisHandlers1D: []
+  allAxisHandlers2D: []
 --- !u!114 &292200000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1065,7 +1082,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &446490811
 GameObject:
@@ -1435,7 +1452,7 @@ Transform:
   - {fileID: 1994199840}
   - {fileID: 606180673}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &564332412
 MonoBehaviour:
@@ -2965,7 +2982,7 @@ Transform:
   m_Children:
   - {fileID: 674247624}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &969763405
 GameObject:
@@ -2995,7 +3012,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1054155488
 GameObject:
@@ -3029,7 +3046,7 @@ Transform:
   - {fileID: 380642533}
   - {fileID: 2076998277}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1150496459
 GameObject:
@@ -3059,7 +3076,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1207961801
 GameObject:
@@ -3307,7 +3324,7 @@ Transform:
   m_Children:
   - {fileID: 1601674569}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -39.187}
 --- !u!1 &1272132662
 GameObject:
@@ -3337,7 +3354,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1291957606
 GameObject:
@@ -3524,7 +3541,7 @@ Transform:
   m_Children:
   - {fileID: 1477502287}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 22.089, y: 0, z: 0}
 --- !u!1 &1323712687
 GameObject:
@@ -4257,6 +4274,55 @@ Transform:
   m_Father: {fileID: 2108916209}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
+--- !u!1 &1434237535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1434237537}
+  - component: {fileID: 1434237536}
+  m_Layer: 0
+  m_Name: Example Listener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1434237536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434237535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11f5561d7e683ed40b7375421d4fb2b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryAxisClickHandler: {fileID: 11400000, guid: c06834ad45964654691056bb5b93f8c6,
+    type: 2}
+  primaryAxis1DHandler: {fileID: 11400000, guid: a9e057ea3b2e47245b81cf90ad823aa2,
+    type: 2}
+  primaryAxis2DHandler: {fileID: 11400000, guid: 4c57db5b641a2ee46b1316b26b7b4428,
+    type: 2}
+--- !u!4 &1434237537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434237535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.42, y: 0.92700195, z: -0.8989999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1443264734
 GameObject:
   m_ObjectHideFlags: 0
@@ -4323,7 +4389,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1453867706
 GameObject:
@@ -5369,6 +5435,7 @@ GameObject:
   - component: {fileID: 1838764610}
   - component: {fileID: 1838764608}
   - component: {fileID: 1838764607}
+  - component: {fileID: 1838764609}
   m_Layer: 11
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -5457,6 +5524,21 @@ MonoBehaviour:
   m_PlayHapticsOnHoverExit: 0
   m_HapticHoverExitIntensity: 0
   m_HapticHoverExitDuration: 0
+--- !u!114 &1838764609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838764605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da851c34f57b1c441b72767710d28c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allButtonHandlers: []
+  allAxisHandlers1D: []
+  allAxisHandlers2D: []
 --- !u!114 &1838764610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5916,7 +5998,7 @@ Transform:
   m_Children:
   - {fileID: 1222602048}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2024310278
 MonoBehaviour:
@@ -6393,5 +6475,5 @@ Transform:
   - {fileID: 378708962}
   - {fileID: 854498430}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
