@@ -22,16 +22,21 @@ public class WaterFillDetector : MonoBehaviour
         heightPerFillAmount = maxFillHeight / fillCompleteAmount;
     }
 
-    void Update()
+    private void Update()
     {
-        AdjustFillLevel();
+        if(amountFilled == 0)
+        {
+            liquid.GetComponentInChildren<MeshRenderer>().enabled = false;
+        }
+        if(amountFilled > 0)
+        {
+            liquid.GetComponentInChildren<MeshRenderer>().enabled = true;
+        }
     }
 
     private void AdjustFillLevel()
     {
         float updatedFillHeight = heightPerFillAmount * amountFilled;
-
-        ClampFillHeights(updatedFillHeight);
 
         Vector3 fillLevelPosition = new Vector3(liquid.transform.localPosition.x, updatedFillHeight, liquid.transform.localPosition.z);
 
@@ -42,27 +47,31 @@ public class WaterFillDetector : MonoBehaviour
     {
         if (other.gameObject.name.Contains("Water"))
         {
-            ProcessFill(1);
+            Debug.Log("hit");
+            ProcessFillAmount(1);
         }
     }
 
-    private void ProcessFill(int fillChangeAmount)
+    public void ProcessFillAmount(int fillChangeAmount)
     {
         amountFilled += fillChangeAmount;
+
+        amountFilled = ClampAmountFilledInt();
+
+        AdjustFillLevel();
     }
 
-    private float ClampFillHeights(float newHeight)
+    private int ClampAmountFilledInt()
     {
-        float returnHeight = 0.0f;
-        if (newHeight > maxFillHeight)
+        int returnAmountFilledInt = amountFilled;
+        if (amountFilled > fillCompleteAmount)
         {
-            returnHeight = maxFillHeight;
+            returnAmountFilledInt = fillCompleteAmount;
         }
-        else if (newHeight < minFillHeight)
+        else if (amountFilled < 0)
         {
-            returnHeight = minFillHeight;
+            returnAmountFilledInt = 0;
         }
-
-        return returnHeight;
+        return returnAmountFilledInt;
     }
 }

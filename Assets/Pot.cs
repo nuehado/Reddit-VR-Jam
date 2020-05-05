@@ -10,7 +10,10 @@ public class Pot : MonoBehaviour
     private int sloshSpeed = 100;
     private int rotateSpeed = 15;
 
-    private int difference = 25;
+    private int difference = 15;
+
+    [SerializeField] private WaterFillDetector waterFillDetector = null;
+
 
     void Update()
     {
@@ -24,6 +27,9 @@ public class Pot : MonoBehaviour
         Quaternion inverseRotation = Quaternion.Inverse(transform.localRotation);
 
         Vector3 finalRotation = Quaternion.RotateTowards(liquid.transform.localRotation, inverseRotation, sloshSpeed * Time.deltaTime).eulerAngles;
+
+        CheckForWaterDump(finalRotation.x);
+        CheckForWaterDump(finalRotation.z);
 
         finalRotation.x = ClampRotationValue(finalRotation.x, difference);
         finalRotation.z = ClampRotationValue(finalRotation.z, difference);
@@ -44,5 +50,13 @@ public class Pot : MonoBehaviour
         }
 
         return returnValue;
+    }
+
+    private void CheckForWaterDump(float potAngle)
+    {
+        if (potAngle < difference)
+        {
+            waterFillDetector.ProcessFillAmount(-1);
+        }
     }
 }
