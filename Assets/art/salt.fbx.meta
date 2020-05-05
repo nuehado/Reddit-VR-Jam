@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 5cb38c267495dd44e9bf1974153074be
 ModelImporter:
   serializedVersion: 19300
+=======
+guid: 4cdb5dc5fe9e32b4a92ea6e7c887b1ff
+ModelImporter:
+  serializedVersion: 29
+>>>>>>> art
   internalIDToNameTable: []
   externalObjects: {}
   materials:
@@ -57,6 +63,12 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+<<<<<<< HEAD
+=======
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+>>>>>>> art
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -86,7 +98,10 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+<<<<<<< HEAD
   autoGenerateAvatarMappingIfUnspecified: 1
+=======
+>>>>>>> art
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
