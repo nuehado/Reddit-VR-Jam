@@ -30,9 +30,7 @@ public class WristButton : XRBaseInteractable
     {
         Collider collider = GetComponent<Collider>();
         yMin = transform.localPosition.y - (collider.bounds.size.y * 0.5f);
-        Debug.Log(yMin);
         yMax = transform.localPosition.y;
-        Debug.Log(yMax);
     }
 
     private void OnDestroy()
@@ -45,7 +43,6 @@ public class WristButton : XRBaseInteractable
     {
         hoverInteractor = interactor;
         previousHandHeight = GetLocalYPosition(hoverInteractor.transform.position);
-        Debug.Log("touch detected");
     }
 
     private void EndPressButton(XRBaseInteractor interactor)

@@ -15,7 +15,8 @@ public class CookableTracker : MonoBehaviour
     private Material rawMaterial = null;
     [SerializeField] GameObject burnedFood = null;
 
-    [SerializeField] private bool isCooked = false;
+    public bool isCooked = false;
+    public string foodType = null;
     
     // Start is called before the first frame update
     void Start()
@@ -28,13 +29,11 @@ public class CookableTracker : MonoBehaviour
     {
         if (amountCooked > burnedCompleteAmount)
         {
-            Debug.Log("ya burned it");
             Instantiate(burnedFood, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
         else if(amountCooked > cookedCompleteAmount)
         {
-            Debug.Log("ya cooked it!");
             GetComponent<MeshRenderer>().material = cookedMaterial;
             isCooked = true;
         }
@@ -42,7 +41,6 @@ public class CookableTracker : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        Debug.Log("particles hit");
         if (other.gameObject.name.Contains("Flame"))
         {
             ProcessCook();
