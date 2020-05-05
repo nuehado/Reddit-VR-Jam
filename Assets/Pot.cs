@@ -28,9 +28,6 @@ public class Pot : MonoBehaviour
 
         Vector3 finalRotation = Quaternion.RotateTowards(liquid.transform.localRotation, inverseRotation, sloshSpeed * Time.deltaTime).eulerAngles;
 
-        CheckForWaterDump(finalRotation.x);
-        CheckForWaterDump(finalRotation.z);
-
         finalRotation.x = ClampRotationValue(finalRotation.x, difference);
         finalRotation.z = ClampRotationValue(finalRotation.z, difference);
 
@@ -52,11 +49,4 @@ public class Pot : MonoBehaviour
         return returnValue;
     }
 
-    private void CheckForWaterDump(float potAngle)
-    {
-        if (potAngle < difference)
-        {
-            waterFillDetector.ProcessFillAmount(-1);
-        }
-    }
 }
