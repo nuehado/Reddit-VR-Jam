@@ -13,13 +13,21 @@ public class WaterFillDetector : MonoBehaviour
     [SerializeField] GameObject liquid;
 
     public bool isFilled = false;
+    public bool isEmpty = false;
     private float minFillHeight = Mathf.Epsilon;
     private float maxFillHeight = 0.5f;
     private float heightPerFillAmount = 0.0f;
 
+    [SerializeField] MeshRenderer waterRenderer;
+    private Material originalWaterMaterial;
+    [SerializeField] private Material filledWaterMaterial;
+    [SerializeField] BoilPot boilPot;
+    [SerializeField] Material hotWaterMaterial;
+
     private void Start()
     {
         heightPerFillAmount = maxFillHeight / fillCompleteAmount;
+        originalWaterMaterial = waterRenderer.material;
     }
 
     private void Update()
@@ -27,10 +35,32 @@ public class WaterFillDetector : MonoBehaviour
         if(amountFilled == 0)
         {
             liquid.GetComponentInChildren<MeshRenderer>().enabled = false;
+            isEmpty = true;
         }
-        if(amountFilled > 0)
+        else if(amountFilled > 0)
         {
             liquid.GetComponentInChildren<MeshRenderer>().enabled = true;
+            isEmpty = false;
+        }
+        if(amountFilled >= fillCompleteAmount)
+        {
+            isFilled = true;
+        }
+
+        if (isFilled == true)
+        {
+            if(boilPot.isHeated == true)
+            {
+                waterRenderer.material = hotWaterMaterial;
+            }
+            else
+            {
+                waterRenderer.material = filledWaterMaterial;
+            }
+        }
+        else
+        {
+            waterRenderer.material = originalWaterMaterial;
         }
     }
 
@@ -67,6 +97,7 @@ public class WaterFillDetector : MonoBehaviour
         if (amountFilled > fillCompleteAmount)
         {
             returnAmountFilledInt = fillCompleteAmount;
+            isFilled = true;
         }
         else if (amountFilled < 0)
         {

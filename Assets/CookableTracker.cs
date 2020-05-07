@@ -12,17 +12,13 @@ public class CookableTracker : MonoBehaviour
     [SerializeField] ParticleSystem[] hitParticles;
 
     [SerializeField] Material cookedMaterial = null;
-    private Material rawMaterial = null;
     [SerializeField] GameObject burnedFood = null;
 
     public bool isCooked = false;
     public string foodType = null;
+
+    public bool mustBeBoiled = false;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        rawMaterial = GetComponent<Material>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -41,13 +37,13 @@ public class CookableTracker : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.name.Contains("Flame"))
+        if (other.gameObject.name.Contains("Flame") && mustBeBoiled == false)
         {
             ProcessCook();
         }
     }
 
-    private void ProcessCook()
+    public void ProcessCook()
     {
         amountCooked += 1;
     }

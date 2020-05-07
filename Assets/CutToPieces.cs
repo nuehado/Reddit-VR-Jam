@@ -13,7 +13,7 @@ public class CutToPieces : MonoBehaviour
         StartCoroutine(DelayCutting());
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.name.Contains("Knife") && isCuttable == true)
         {
@@ -21,20 +21,20 @@ public class CutToPieces : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name.Contains("Knife") && isCuttable == true)
         {
             Cut();
         }
-    }
+    }*/
 
     private void Cut()
     {
         foreach (GameObject piece in afterCutPieces)
         {
             piece.transform.position = transform.position;
-            piece.transform.localRotation = Quaternion.identity;
+            piece.transform.localRotation = transform.localRotation;
             piece.SetActive(true);
         }
 
