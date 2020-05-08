@@ -261,3 +261,4 @@ MonoBehaviour:
     type: 3}
   isCooked: 0
   foodType: Bread
+  mustBeBoiled: 0

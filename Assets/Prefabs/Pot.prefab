@@ -5474,6 +5474,7 @@ MonoBehaviour:
   - {fileID: 840156990}
   cookedCarrotMaterial: {fileID: 2100000, guid: 9390e28e335820f408dc49db88a6b5f4,
     type: 2}
+  customDestroyer: {fileID: 0}
 --- !u!1001 &8044838669144410099
 PrefabInstance:
   m_ObjectHideFlags: 0
