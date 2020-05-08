@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 264192
   m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 264192
   m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 264192
   m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -787,7 +787,7 @@ MonoBehaviour:
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 264192
   m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -1143,6 +1143,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1910451312483106811, guid: b1c504705ae03d9499e8259d4b19842f,
+        type: 3}
+      propertyPath: m_InteractionLayerMask.m_Bits
+      value: 264192
+      objectReference: {fileID: 0}
     - target: {fileID: 5216731342159185379, guid: b1c504705ae03d9499e8259d4b19842f,
         type: 3}
       propertyPath: m_Name
@@ -1223,6 +1228,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8610619130929922294}
     m_Modifications:
+    - target: {fileID: 1910451312483106811, guid: b1c504705ae03d9499e8259d4b19842f,
+        type: 3}
+      propertyPath: m_InteractionLayerMask.m_Bits
+      value: 264192
+      objectReference: {fileID: 0}
     - target: {fileID: 5216731342159185379, guid: b1c504705ae03d9499e8259d4b19842f,
         type: 3}
       propertyPath: m_Name
@@ -1303,6 +1313,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8610619132355351486}
     m_Modifications:
+    - target: {fileID: 1910451312483106811, guid: b1c504705ae03d9499e8259d4b19842f,
+        type: 3}
+      propertyPath: m_InteractionLayerMask.m_Bits
+      value: 264192
+      objectReference: {fileID: 0}
     - target: {fileID: 5216731342159185379, guid: b1c504705ae03d9499e8259d4b19842f,
         type: 3}
       propertyPath: m_Name

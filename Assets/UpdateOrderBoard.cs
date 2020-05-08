@@ -9,12 +9,7 @@ public class UpdateOrderBoard : MonoBehaviour
     [SerializeField] List<GameObject> breadIcons = new List<GameObject>();
 
     [SerializeField] OrderTask orderTask;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         UpdateOrderIconsActive();
@@ -26,7 +21,7 @@ public class UpdateOrderBoard : MonoBehaviour
         int steaksToDisplay = orderTask.steaksInOrder;
         int breadsToDisplay = orderTask.breadsInOrder;
 
-        for (int i = 1; i < carrotIcons.Count; i++)
+        for (int i = 1; i <= carrotIcons.Count; i++)
         {
             if (i <= carrotsToDisplay)
             {
@@ -34,7 +29,7 @@ public class UpdateOrderBoard : MonoBehaviour
             }
         }
 
-        for (int i = 1; i < breadIcons.Count; i++)
+        for (int i = 1; i <= breadIcons.Count; i++)
         {
             if (i <= breadsToDisplay)
             {
@@ -42,7 +37,7 @@ public class UpdateOrderBoard : MonoBehaviour
             }
         }
 
-        for (int i = 1; i < steakIcons.Count; i++)
+        for (int i = 1; i <= steakIcons.Count; i++)
         {
             if (i <= steaksToDisplay)
             {

@@ -35,12 +35,12 @@ public class OrderPlacer : MonoBehaviour
             if(f3OrdersTimer >= 2 * selectedTimeBetweenf3orders)
             {
                 orderTasks[2].NewOrder(selectedTimeToCompleteOrder);
+                levelStarting = false;
+                f3OrdersTimer = 0f;
             }
             else if (f3OrdersTimer >= selectedTimeBetweenf3orders)
             {
                 orderTasks[1].NewOrder(selectedTimeToCompleteOrder);
-                levelStarting = false;
-                f3OrdersTimer = 0f;
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class OrderTask : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class OrderTask : MonoBehaviour
     public float timeToCook = 60f;
     public float orderTimer = 0f;
     [SerializeField] GameObject failedCanvasIcon;
+    [SerializeField] TextMeshProUGUI secondsLeft;
 
     private void OnEnable()
     {
@@ -21,13 +23,20 @@ public class OrderTask : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        orderTimer += Time.deltaTime;
-
-        if(orderTimer > timeToCook)
+        if (isOrderActive == true)
         {
-            Debug.Log("orderfailed"); //do some stuff
-            isOrderActive = false;
-            failedCanvasIcon.SetActive(true);
+            orderTimer += Time.deltaTime;
+            secondsLeft.text = Mathf.RoundToInt((timeToCook - orderTimer)).ToString();
+            if (orderTimer > timeToCook)
+            {
+                Debug.Log("orderfailed"); //do some stuff
+                isOrderActive = false;
+                failedCanvasIcon.SetActive(true);
+            }
+        }
+        else
+        {
+            secondsLeft.text = "";
         }
     }
 
@@ -49,6 +58,8 @@ public class OrderTask : MonoBehaviour
     public void OrderSuccessfull()
     {
         Debug.Log("order complete!");
+        isOrderActive = false;
+        orderTimer = 0f;
 
         //NewOrder(timeToCook);
     }
