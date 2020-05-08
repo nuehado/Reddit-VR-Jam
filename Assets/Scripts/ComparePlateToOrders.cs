@@ -26,16 +26,17 @@ public class ComparePlateToOrders : MonoBehaviour
             } 
         }
         
-        if (completeOrders.Count == 1)
+        /*if (completeOrders.Count == 1)
         {
             _orderTask = completeOrders[0];
-        }
-        else if (completeOrders.Count > 0)
+        }*/
+        if (completeOrders.Count > 0)
         {
+            _orderTask = completeOrders[0];
             float orderTimeCompare = completeOrders[0].orderTimer;
             for( int i = 1; i < completeOrders.Count; i++)
             {
-                if (completeOrders[i].orderTimer < orderTimeCompare)
+                if (completeOrders[i].orderTimer > orderTimeCompare)
                 {
                     _orderTask = completeOrders[i];
                     orderTimeCompare = _orderTask.orderTimer;

@@ -14,11 +14,16 @@ public class OrderTask : MonoBehaviour
     public float orderTimer = 0f;
     [SerializeField] GameObject failedCanvasIcon;
     [SerializeField] TextMeshProUGUI secondsLeft;
+    public bool isLost = false;
+    [SerializeField] OrderPlacer orderPlacer;
+    [SerializeField] LevelManager levelManager;
+    [SerializeField] UpdateOrderBoard updateOrderBoard;
 
-    private void OnEnable()
-    {
-        //NewOrder();
-    }
+    private int completedOrders = 0;
+    [SerializeField] private int ordersToComplete = 3;
+    [SerializeField] GameObject completeIcon;
+    public bool isComplete = false;
+
 
     // Update is called once per frame
     void Update()
@@ -29,9 +34,11 @@ public class OrderTask : MonoBehaviour
             secondsLeft.text = Mathf.RoundToInt((timeToCook - orderTimer)).ToString();
             if (orderTimer > timeToCook)
             {
-                Debug.Log("orderfailed"); //do some stuff
+                Debug.Log("orderfailed"); //todo some stuff
                 isOrderActive = false;
                 failedCanvasIcon.SetActive(true);
+                isLost = true;
+                levelManager.CheckIfAllOrdersFailed();
             }
         }
         else
@@ -60,7 +67,44 @@ public class OrderTask : MonoBehaviour
         Debug.Log("order complete!");
         isOrderActive = false;
         orderTimer = 0f;
+        completedOrders += 1;
+        if(completedOrders >= ordersToComplete)
+        {
+            isOrderActive = false;
+            updateOrderBoard.ResetFoodIcons();
+            completeIcon.SetActive(true);
+            isComplete = true;
+            levelManager.CheckIfLevelWon();
+        }
+        else
+        {
+            if (isLost == false)
+            {
+                StartCoroutine(StartNextOrder());
+            }
+        }
+        
+    }
 
-        //NewOrder(timeToCook);
+    private IEnumerator StartNextOrder()
+    {
+        yield return new WaitForSeconds(orderPlacer.selectedTimeBetweenf3orders);
+
+        NewOrder(orderPlacer.selectedTimeToCompleteOrder);
+
+    }
+
+    public void ResetOrderCompletely()
+    {
+        isOrderActive = false;
+        isComplete = false;
+        failedCanvasIcon.SetActive(false);
+        completeIcon.SetActive(false);
+        orderTimer = 0f;
+        isLost = false;
+        carrotsInOrder = 0;
+        steaksInOrder = 0;
+        breadsInOrder = 0;
+        updateOrderBoard.ResetFoodIcons();
     }
 }

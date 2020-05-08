@@ -7,7 +7,7 @@ public class UpdateOrderBoard : MonoBehaviour
     [SerializeField] List<GameObject> carrotIcons = new List<GameObject>();
     [SerializeField] List<GameObject> steakIcons = new List<GameObject>();
     [SerializeField] List<GameObject> breadIcons = new List<GameObject>();
-
+    
     [SerializeField] OrderTask orderTask;
 
     void Update()
@@ -43,6 +43,22 @@ public class UpdateOrderBoard : MonoBehaviour
             {
                 steakIcons[i - 1].SetActive(true);
             }
+        }
+    }
+
+    public void ResetFoodIcons()
+    {
+        foreach(GameObject icon in carrotIcons)
+        {
+            icon.SetActive(false);
+        }
+        foreach (GameObject icon in steakIcons)
+        {
+            icon.SetActive(false);
+        }
+        foreach (GameObject icon in breadIcons)
+        {
+            icon.SetActive(false);
         }
     }
 }
