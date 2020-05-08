@@ -41,6 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7094134971922527827}
+  - component: {fileID: 407232464}
   m_Layer: 15
   m_Name: Carrot
   m_TagString: Untagged
@@ -65,6 +66,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &407232464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2820173879551781948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e527dce93496984dad0047dce550261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3556630534501905987
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +677,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_CustomReticle: {fileID: 0}
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 3556630535876802958}
   m_AttachEaseInTime: 0
   m_MovementType: 1
   m_TrackPosition: 1

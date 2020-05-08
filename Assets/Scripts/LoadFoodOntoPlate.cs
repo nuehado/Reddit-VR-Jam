@@ -11,9 +11,8 @@ public class LoadFoodOntoPlate : MonoBehaviour
     public List<GameObject> steaks = new List<GameObject>();
     public List<GameObject> breads = new List<GameObject>();
 
-    [SerializeField] Transform destroyLocation;
-
     [SerializeField] MoveAndDestroy moveAndDestroy;
+
 
     // Start is called before the first frame update
     void Start()
@@ -104,5 +103,6 @@ public class LoadFoodOntoPlate : MonoBehaviour
         {
             bread.SetActive(false);
         }
+
     }
 }
